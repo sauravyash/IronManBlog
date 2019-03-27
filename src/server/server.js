@@ -7,7 +7,7 @@ import pug from 'pug'
 
 const server = new Koa()
 const router = new Router()
-const PORT = process.env.DEVENV ? 4000 : 80
+const PORT = process.env.DEVENV ? 4000 : process.env.PORT
 
 let latestNews = {
   updates: [
