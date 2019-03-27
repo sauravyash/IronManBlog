@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Uni-Sans";
+  font-style: italic;
+  src: url("font/uni-sans/Uni Sans Heavy Italic.otf"); }
+@font-face {
+  font-family: "Uni-Sans";
+  font-style: normal;
+  src: url("font/uni-sans/Uni Sans Heavy.otf"); }
+@font-face {
+  font-family: "Uni-Sans-Thin";
+  src: url("font/uni-sans/Uni Sans Thin.otf"); }
+@font-face {
+  font-family: "Uni-Sans-Thin";
+  font-style: italic;
+  src: url("font/uni-sans/Uni Sans Thin Italic.otf"); }
+nav.menu {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, white 90%, transparent 100%);
+  z-index: 9999; }
+  nav.menu .menu-item {
+    font-family: Uni-Sans;
+    user-select: none;
+    color: #000;
+    flex: 1;
+    text-align: center;
+    text-decoration: none; }
+    nav.menu .menu-item.logo {
+      font-size: 1.75em;
+      letter-spacing: 0.5em; }
+    nav.menu .menu-item.menu-blank {
+      flex: 4; }
+    nav.menu .menu-item.menu-links {
+      font-family: Uni-Sans-Thin;
+      flex: 2;
+      display: flex;
+      align-self: center;
+      align-items: center; }
+      nav.menu .menu-item.menu-links a {
+        color: #000;
+        text-decoration: none;
+        flex: 1; }
+        nav.menu .menu-item.menu-links a.active span {
+          border-bottom: 3px solid #1e8bc3;
+          padding: 0.2em .25em;
+          font-weight: 600; }
+        nav.menu .menu-item.menu-links a span {
+          display: inline; }
+        nav.menu .menu-item.menu-links a i {
+          display: none; }
+
+@media screen and (max-width: 1100px) {
+  nav.menu .menu-item.menu-blank {
+    flex: 3; } }
+@media screen and (max-width: 950px) {
+  nav.menu .menu-item.menu-blank {
+    flex: 2; } }
+@media screen and (max-width: 650px) {
+  nav.menu .menu-item.menu-links a span {
+    display: none; }
+
+  nav.menu .menu-item.menu-links a i {
+    display: inline; } }
+@media screen and (max-width: 500px) {
+  nav.menu .menu-item.menu-blank {
+    display: none; } }
+.section {
+  width: 100%;
+  margin: auto;
+  height: 100%; }
+
+.section#intro {
+  height: 90vh; }
+  .section#intro span {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-family: Uni-Sans;
+    font-weight: 900;
+    font-size: 5vw;
+    letter-spacing: 1vw; }
+  .section#intro canvas#matrix {
+    width: 100%;
+    height: 100%; }
+
+footer {
+  background-color: #333;
+  color: #ccc;
+  display: flex;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  width: 100%; }
+  footer span {
+    flex: 2;
+    text-align: left;
+    align-content: center;
+    align-self: center;
+    align-items: center; }
+  footer span.full-copyright {
+    display: inline; }
+  footer span.short-copyright {
+    display: none; }
+  footer div.padding {
+    flex: 2; }
+  footer div.social-links {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    align-items: center; }
+    footer div.social-links i {
+      flex: 1;
+      flex-shrink: 2;
+      text-align: center; }
+      footer div.social-links i:hover {
+        cursor: pointer; }
+      footer div.social-links i.fa-facebook:hover {
+        color: #4267B2; }
+      footer div.social-links i.fa-twitter:hover {
+        color: #1CA1F2; }
+      footer div.social-links i.fa-instagram:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent; }
+      footer div.social-links i.fa-github:hover {
+        color: #6e5494; }
+      footer div.social-links i.fa-linkedin:hover {
+        color: #0077b5; }
+      footer div.social-links i:active {
+        filter: brightness(70%); }
+
+@media screen and (max-width: 1100px) {
+  footer div.padding {
+    flex: 1; } }
+@media screen and (max-width: 800px) {
+  footer div.padding {
+    display: none; } }
+@media screen and (max-width: 650px) {
+  footer span.full-copyright {
+    display: none; }
+  footer span.short-copyright {
+    display: inline;
+    flex: 1; }
+  footer div.padding {
+    flex: 1; }
+  footer div.social-links {
+    flex: 1; }
+    footer div.social-links i {
+      font-size: 1.25em; } }
+
+/*# sourceMappingURL=core.css.map */

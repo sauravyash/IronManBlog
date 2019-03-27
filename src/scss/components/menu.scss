@@ -1,0 +1,79 @@
+// Navigation Menu 
+nav.menu{
+  width:100%;
+  padding: 1rem 2rem;
+  display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  background: linear-gradient(180deg ,white 90%, transparent 100%);
+  z-index: 9999;
+  .menu-item{
+    font-family: Uni-Sans; 
+    user-select: none;
+    color: #000;
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    &.logo{
+      font-size: 1.75em;
+      letter-spacing: 0.5em;
+    }
+    &.menu-blank{
+      flex: 4;
+    }
+    &.menu-links{
+      font-family: Uni-Sans-Thin;
+      flex: 2;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      a {
+        color: #000;
+        text-decoration: none;
+        flex:1;
+        &.active span{
+          border-bottom: 3px solid #1e8bc3;
+          padding: 0.2em .25em;
+          font-weight: 600;
+        }
+        span{
+          display: inline;
+        }
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  nav.menu .menu-item.menu-blank {
+    flex: 3;
+  }
+}
+@media screen and (max-width: 950px) {
+  nav.menu .menu-item.menu-blank {
+    flex: 2;
+  }
+}
+
+// @media screen and (max-width: 600px) {
+//   nav.menu .menu-item.menu-blank {
+//     flex: 2;
+//   }
+// }
+
+@media screen and (max-width: 650px) {
+  nav.menu .menu-item.menu-links a span {
+    display: none;
+  }
+  nav.menu .menu-item.menu-links a i{
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav.menu .menu-item.menu-blank{
+    display: none;
+  }
+}
