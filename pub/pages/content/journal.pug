@@ -4,9 +4,10 @@ block content
   .container.is-fluid#updates(style="padding-top: 2rem").content.is-large
     .container
       h1.h1 Journal
-      
-      h4.has-text-centered 
-      span.is-size-5.has-text-weight-bold.inline-block By Saurav Yash Agasti 
-      span.is-size-5.has-text-weight-bold.has-text-right.inline-block.is-pulled-right 
-      section(style="padding:0 1rem 4rem")
-        p 
+      each post in updates
+        section(style="padding:4rem 0")
+          h4.has-text-centered=post.title
+          span.is-size-5.has-text-weight-bold.inline-block=`By ${post.author}`
+          span.is-size-5.has-text-weight-bold.has-text-right.inline-block.is-pulled-right=`${post.time} ${post.date}`
+          section(style="padding:0 1rem 4rem")
+            p=post.content

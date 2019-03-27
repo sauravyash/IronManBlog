@@ -1,4 +1,49 @@
 extends ../layout
 
 block content
-  p hiii
+  //.container.is-fluid#updates(style="padding-top: 2rem").content.is-large
+  section.hero.is-primary.is-bold
+    .hero-body
+      .container
+        h1.title Feedback
+  .container(style="padding-top: 2rem")
+    form
+      // name
+      .field
+        input.input(type='text', name='name', placeholder='Your Name')
+      // email
+      .field
+        input.input(type='email', name='email', placeholder='Your Email')
+      // message
+      .field
+        textarea.textarea(name='message', placeholder="What do you think?")
+      button.button.is-danger.is-large(type='submit') Submit
+  hr
+  .container(style="padding: 1rem")
+    each post in feedback
+      article.media
+        figure.media-left
+          p.image.is-64x64
+            img.is-rounded(src=`http://i.pravatar.cc/300?u=${post.name}`)
+        .media-content
+          .content
+            p
+              strong=`${post.title}`
+              br
+              =`${post.name}`
+              small=` ${post.time} ${post.date}`
+              br
+              span=post.message
+        //
+          nav.level.is-mobile
+            .level-left
+              a.level-item
+                span.icon.is-small
+                  i.fas.fa-reply
+              a.level-item
+                span.icon.is-small
+                  i.fas.fa-retweet
+              a.level-item
+                span.icon.is-small
+                  i.fas.fa-heart
+    

@@ -12,7 +12,8 @@ const PORT = process.env.DEVENV ? 4000 : process.env.PORT
 let blogData = {
   updates: [
     {
-      title: "Day 1",
+      title: "Creating Iron Man in Maya: Preface",
+      author:"Saurav Yash Agasti",
       date: "5/03/2019",
       time: "2:30pm",
       tag: "General",
@@ -20,6 +21,7 @@ let blogData = {
     },
     {
       title: "Creating Iron Man in Maya: Part 1",
+      author:"Saurav Yash Agasti",
       date: "1/3/2019",
       time: "3:30pm",
       tag: "3D Modelling",
@@ -27,6 +29,7 @@ let blogData = {
     },
     {
       title: "Creating Iron Man in Maya: Part 2",
+      author:"Saurav Yash Agasti",
       date: "1/3/2019",
       time: "3:30pm",
       tag: "3D Modelling",
@@ -34,22 +37,34 @@ let blogData = {
     },
     {
       title: "Creating Iron Man in Maya: Part 3",
+      author:"Saurav Yash Agasti",
       date: "1/3/2019",
       time: "3:30pm",
       tag: "3D Modelling",
       content: "Restarting"
+    }
+  ],
+  feedback: [
+    {
+      title: "Amazing Work",
+      name: "John Doe IV",
+      date: "26/03/2019",
+      time: "3:01pm",
+      message: "I can't believe you did this, I though this was gonna be aids."
     },
-
+    {
+      title: "Damn... Respect",
+      name: "Frednie Smith",
+      date: "25/03/2019",
+      time: "3:01pm",
+      message: "If only you started earlier..."
+    }
   ]
 }
 
 // website root
 router.get('/', ctx => {
   ctx.body = pug.renderFile('pub/pages/content/index.pug', blogData)
-})
-
-router.get('/:journal', ctx => {
-  ctx.body = pug.renderFile('pub/pages/content/journal.pug', blogData)
 })
 
 router.get('/:page_name', ctx => {
