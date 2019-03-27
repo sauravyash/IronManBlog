@@ -2,5 +2,8 @@
   "events": {
     "exit": "node build && osascript -e 'display notification \"app restarted\" with title \"nodemon\"'",
     "crash": "node build && osascript -e 'display notification \"app restarted\" with title \"nodemon\"'"
+  },
+  "env": {
+    "DEVENV": true
   }
 }

@@ -7,6 +7,7 @@ import pug from 'pug'
 
 const server = new Koa()
 const router = new Router()
+const PORT = process.env.DEVENV ? 4000 : 80
 
 let latestNews = {
   updates: [
@@ -40,7 +41,7 @@ let latestNews = {
     },
 
   ]
-} 
+}
 
 // website root
 router.get('/', ctx => {
@@ -56,4 +57,6 @@ server
   .use(serve('app'))
   .use(logger('tiny'))
   .use(router.routes())
-  .listen(4000)
+  .listen(PORT)
+
+console.log(`This server is hosted on port ${PORT}`)

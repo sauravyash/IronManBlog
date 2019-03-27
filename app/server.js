@@ -15,6 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import send from 'koa-send'
 const server = new _koa.default();
 const router = new _koaRouter.default();
+const PORT = process.env.DEVENV ? 4000 : 80;
 let latestNews = {
   updates: [{
     title: "First Post: le début",
@@ -49,4 +50,5 @@ router.get('/', ctx => {
 //   await send(ctx, ctx.path, { root: __dirname + '/app' })
 // })
 
-server.use((0, _koaStatic.default)('pub')).use((0, _koaStatic.default)('app')).use((0, _koaMorgan.default)('tiny')).use(router.routes()).listen(4000);
+server.use((0, _koaStatic.default)('pub')).use((0, _koaStatic.default)('app')).use((0, _koaMorgan.default)('tiny')).use(router.routes()).listen(PORT);
+console.log(`This server is hosted on port ${PORT}`);
