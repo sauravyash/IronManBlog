@@ -1,13 +1,38 @@
-nav.menu
-  a.menu-item.logo(href='/') YASHHAX
-  a.menu-item.menu-blank
-  .menu-item.menu-links
-    a(href='projects')
-      span Projects
-      i.fas.fa-book
-    a(href='about')
-      span About
-      i.fas.fa-address-card
-    a(href='contact')
-      span Contact
-      i.fas.fa-envelope
+nav.navbar.container.is-fluid(role='navigation', aria-label='main navigation')
+    .navbar-brand
+      a.navbar-item(style="font-family: Uni-Sans;font-size:1.25rem;")
+        | YASHHAX
+      a.navbar-burger.burger(role='button', aria-label='menu', aria-expanded='false', data-target='navbarBasicExample')
+        span(aria-hidden='true')
+        span(aria-hidden='true')
+        span(aria-hidden='true')
+    #navbarBasicExample.navbar-menu
+      .navbar-start
+        a.navbar-item(href="/")
+          | Home
+        a.navbar-item(href="/background")
+          | Background
+        a.navbar-item(href="/reference")
+          | Reference Images
+        .navbar-item.has-dropdown.is-hoverable
+          a.navbar-link(href="/techniques")
+            | Techniques
+          .navbar-dropdown
+            a.navbar-item(href="/techniques/uv")
+              | UV Mapping
+            a.navbar-item(href="/techniques/textures")
+              | Texture Mapping
+            hr.navbar-divider
+            a.navbar-item(href="/techniques")
+              | Summary
+        a.navbar-item(href="/journal")
+          | Journal
+        a.navbar-item(href="/rendering")
+          | Rendering
+        a.navbar-item(href="/downloads")
+          | Downloads
+      .navbar-end
+        .navbar-item
+          .buttons
+            a.button.is-light(href="/feedback")
+              | Feedback

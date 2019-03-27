@@ -45,10 +45,18 @@ let latestNews = {
 
 };
 router.get('/', ctx => {
-  ctx.body = _pug.default.renderFile('pub/pages/index.pug', latestNews);
-}); // router.get('/js', async (ctx) => {
-//   await send(ctx, ctx.path, { root: __dirname + '/app' })
-// })
-
+  ctx.body = _pug.default.renderFile('pub/pages/content/index.pug', latestNews);
+});
+router.get('/:page_name', ctx => {
+  ctx.body = _pug.default.renderFile(`pub/pages/content/${ctx.params.page_name}.pug`, latestNews);
+});
+router.get('/:page_name/:sub_page', ctx => {
+  try {
+    ctx.body = _pug.default.renderFile(`pub/pages/content/${ctx.params.page_name}/${ctx.params.sub_page}.pug`);
+  } catch (e) {
+    ctx.status = 404;
+    ctx.body = "Sorry, page not found";
+  }
+});
 server.use((0, _koaStatic.default)('pub')).use((0, _koaStatic.default)('app')).use((0, _koaMorgan.default)('tiny')).use(router.routes()).listen(PORT);
 console.log(`This server is hosted on port ${PORT}`);

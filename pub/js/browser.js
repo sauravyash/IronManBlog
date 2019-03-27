@@ -1,47 +1,29 @@
 "use strict";
 
-// Initialising the canvas
-const container = document.querySelector('.section#intro');
-const canvas = document.querySelector('canvas#matrix');
-const ctx = canvas.getContext('2d'); // Setting up the letters
+// hamburger menu all
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0); // Check if there are any navbar burgers
 
-var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ1234567890987654321234567890876543212345678907654321';
-letters = letters.split('');
-let fontSize = 10;
-var drops = [];
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target); // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
 
-function drawInit() {
-  // Setting the width and height of the canvas
-  canvas.width = container.clientWidth;
-  canvas.height = container.clientHeight; // Setting up the columns
-
-  var columns = canvas.width / fontSize; // var drops = []
-  // Setting up the drops
-
-  for (var i = 0; i < columns; i++) {
-    drops[i] = 1;
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
   }
-} // Setting up the draw function
-
-
-function draw() {
-  // var drops = []
-  ctx.fillStyle = 'rgba(0, 0, 0, .1)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  for (var i = 0; i < drops.length; i++) {
-    var text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillStyle = '#0f0';
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-    drops[i]++;
-
-    if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
-      drops[i] = 0;
-    }
-  }
-}
-
-drawInit(); // Loop the animation
-// setInterval(drawInit, 1000)
-
-setInterval(draw, 50);
+});
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach($delete => {
+    let $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});

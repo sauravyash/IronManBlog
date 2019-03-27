@@ -45,12 +45,22 @@ let latestNews = {
 
 // website root
 router.get('/', ctx => {
-  ctx.body = pug.renderFile('pub/pages/index.pug', latestNews)
+  ctx.body = pug.renderFile('pub/pages/content/index.pug', latestNews)
 })
 
-// router.get('/js', async (ctx) => {
-//   await send(ctx, ctx.path, { root: __dirname + '/app' })
-// })
+router.get('/:page_name', ctx => {
+  ctx.body = pug.renderFile(`pub/pages/content/${ctx.params.page_name}.pug`, latestNews)
+})
+
+router.get('/:page_name/:sub_page', ctx => {
+  try{
+    ctx.body = pug.renderFile(`pub/pages/content/${ctx.params.page_name}/${ctx.params.sub_page}.pug`)
+  }
+  catch(e){
+    ctx.status = 404
+    ctx.body = "Sorry, page not found"
+  }
+})
 
 server
   .use(serve('pub'))
