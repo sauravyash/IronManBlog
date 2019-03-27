@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  .section.is-paddingless#intro
+    span The Iron Man Blog
+    img(src="img/bg/title-page.jpg", style="margin:auto; min-height: 100%;")
+  .container.is-fluid#updates(style="padding:4rem 1rem")
+    h1.title.is-1 Recent Posts
+    .tile.is-ancestor(style="flex-wrap:wrap")
+      each post in updates
+        .tile.is-parent.is-4.is-pulled-left
+          article.tile.is-child.notification.is-info
+            p.title= post.title
+            p.subtitle= post.tag
+            .content= post.content
+  
+    
+    
+    
+    
+    
+    
