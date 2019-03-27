@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import send from 'koa-send'
 const server = new _koa.default();
 const router = new _koaRouter.default();
-const PORT = process.env.DEVENV ? 4000 : 80;
+const PORT = process.env.DEVENV ? 4000 : process.env.PORT;
 let latestNews = {
   updates: [{
     title: "First Post: le début",
