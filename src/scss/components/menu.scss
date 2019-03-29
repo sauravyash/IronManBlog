@@ -1,0 +1,12 @@
+.notification.alert{
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  margin: auto;
+  box-sizing: border-box;
+}
+img{
+  object-fit: cover;
+}

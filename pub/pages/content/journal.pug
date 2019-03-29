@@ -4,10 +4,40 @@ block content
   .container.is-fluid#updates(style="padding-top: 2rem").content.is-large
     .container
       h1.h1 Journal
-      each post in updates
+      each post in query
+        hr
+        - 
+          function timeSince(date) {
+
+            var seconds = Math.floor((new Date() - date) / 1000);
+            
+            var interval = Math.floor(seconds / 31536000);
+
+            if (interval > 1) {
+              return interval + " years ago";
+            }
+            interval = Math.floor(seconds / 2592000);
+            if (interval > 1) {
+              return interval + " months ago";
+            }
+            interval = Math.floor(seconds / 86400);
+            if (interval > 1) {
+              return interval + " days ago";
+            }
+            interval = Math.floor(seconds / 3600);
+            if (interval > 1) {
+              return interval + " hours ago";
+            }
+            interval = Math.floor(seconds / 60);
+            if (interval > 1) {
+              return interval + " minutes ago";
+            }
+            return Math.floor(seconds) + " seconds ago";
+          }
+        - var post_time = timeSince(new Date(post.Time * 1000)) 
         section(style="padding:4rem 0")
-          h4.has-text-centered=post.title
-          span.is-size-5.has-text-weight-bold.inline-block=`By ${post.author}`
-          span.is-size-5.has-text-weight-bold.has-text-right.inline-block.is-pulled-right=`${post.time} ${post.date}`
+          h4.has-text-centered=post.Journal_Title
+          span.is-size-5.has-text-weight-bold.inline-block=`By ${post.Journal_Author}`
+          span.is-size-5.has-text-weight-bold.has-text-right.inline-block.is-pulled-right=post_time
           section(style="padding:0 1rem 4rem")
-            p=post.content
+            p=post.Journal_Content

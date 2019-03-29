@@ -7,8 +7,7 @@ sass.render({
   outFile: 'pub/css/core.scss',
   sourceMap: true
 },
-(err, result) => {
-  result
+(err /*,result*/) => {
   if (err) throw err
 })
 
@@ -17,7 +16,7 @@ function babelTransform(from, to){
     fs.writeFile(to, result.code, (err) => {
       if (err) throw(err)
     })
-  }).catch(e=>{console.log(from, e)})
+  }).catch(e=>{console.log(e)})
 }
 
 babelTransform('src/server/server.js','app/server.js')

@@ -7,12 +7,12 @@ block content
   .container.is-fluid#updates(style="padding:4rem 1rem")
     h1.title.is-1 Recent Posts
     .tile.is-ancestor(style="flex-wrap:wrap")
-      each post in updates
+      each post in query
         .tile.is-parent.is-4.is-pulled-left
           article.tile.is-child.notification.is-info
-            p.title= post.title
-            p.subtitle= post.tag
-            .content= post.content
+            p.title= post.Journal_Title
+            p.subtitle= post.Journal_Tag
+            .content=`${post.Journal_Content.substring(0,120)}...`
   
     
     
