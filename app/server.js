@@ -30,7 +30,7 @@ let blogData = {
     date: "1/3/2019",
     time: "3:30pm",
     tag: "3D Modelling",
-    content: "Creating blueprints"
+    content: "I decided to look into iron man models and I realised that this superhero would be the perfect choice for a model. This was because Iron Man was more machine than human, but still had the basic characteristics of a human. This would result in a reasonably simpler box model compared to any human-like character like Thor or Spiderman. When searching throughout Pinterest and Google, I found multiple decent reference images for Mark 2 and Mark 1, but there was one Mark 3 reference image that seemed to look both high quality and accurate to the suit in the first Iron Man movie. After obtaining this image from the source website and citing it Harvard style, I used photoshop to split the image into the front, side and back images for later use in Maya."
   }, {
     title: "Creating Iron Man in Maya: Part 2",
     author: "Saurav Yash Agasti",
