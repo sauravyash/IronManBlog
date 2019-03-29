@@ -35,9 +35,9 @@ block content
             return Math.floor(seconds) + " seconds ago";
           }
         - var post_time = timeSince(new Date(post.Time * 1000)) 
-        section(style="padding:4rem 0")
-          h4.has-text-centered=post.Journal_Title
+        section(style="padding:4rem 1")
+          h2.has-text-centered=post.Journal_Title
           span.is-size-5.has-text-weight-bold.inline-block=`By ${post.Journal_Author}`
           span.is-size-5.has-text-weight-bold.has-text-right.inline-block.is-pulled-right=post_time
-          section(style="padding:0 1rem 4rem")
+          section(style="padding:2rem 0rem")
             p=post.Journal_Content

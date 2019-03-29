@@ -139,8 +139,6 @@ const onFeedbackSubmit = () => new Promise((resolve, reject) => {
     date: new Date()
   };
   postData(`/feedback`, formData).then(data => {
-    console.log(data);
-
     if (data.success === "true") {
       formSuccess();
       resolve();
@@ -159,6 +157,7 @@ const formSuccess = () => {
   removeClass(submitButton, "is-warning");
   addClass(submitButton, "is-success");
   submitButton.value = "Success";
+  localStorage.setItem("submitted", "true");
 };
 
 const formFailure = () => {
@@ -171,3 +170,7 @@ const formFailure = () => {
     addClass(submitButton, "is-info");
   }, 3000);
 };
+
+if (localStorage.getItem("submitted") == true) {
+  submitButton.disabled = true;
+}

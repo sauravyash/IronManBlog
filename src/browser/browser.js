@@ -8,9 +8,9 @@
  */
 function hasClass(el, className) {
   if (el.classList)
-    return el.classList.contains(className);
+    return el.classList.contains(className)
   else
-    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
 }
 
 /*
@@ -22,8 +22,8 @@ function hasClass(el, className) {
  */
 function addClass(el, className) {
   if (el.classList)
-    el.classList.add(className);
-  else if (!hasClass(el, className)) el.className += " " + className;
+    el.classList.add(className)
+  else if (!hasClass(el, className)) el.className += " " + className
 }
 
 /*
@@ -35,10 +35,10 @@ function addClass(el, className) {
  */
 function removeClass(el, className) {
   if (el.classList)
-    el.classList.remove(className);
+    el.classList.remove(className)
   else if (hasClass(el, className)) {
-    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-    el.className=el.className.replace(reg, ' ');
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
   }
 }
 
@@ -143,7 +143,6 @@ const onFeedbackSubmit = () => new Promise((resolve, reject) => {
   }
   postData(`/feedback`, formData)
     .then(data => {
-      console.log(data)
       if (data.success === "true"){
         formSuccess()
         resolve()
@@ -162,6 +161,7 @@ const formSuccess = () => {
   removeClass(submitButton, "is-warning")
   addClass(submitButton, "is-success")
   submitButton.value = "Success"
+  localStorage.setItem("submitted", "true")
 }
 
 const formFailure = () => {
@@ -172,5 +172,9 @@ const formFailure = () => {
   setInterval(()=>{
     removeClass(submitButton, "is-danger")
     addClass(submitButton, "is-info")
-  },3000)
+  }, 3000)
+}
+
+if (localStorage.getItem("submitted") == true) {
+  submitButton.disabled = true
 }
