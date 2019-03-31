@@ -102,6 +102,13 @@ let submitButton = document.querySelector("#feedback-submit-button");
 if (submitButton) {
   submitButton.addEventListener("click", e => {
     e.preventDefault();
+
+    if (localStorage.getItem("submitted") === "true") {
+      notification("warning", `Error: You have already submitted a response`);
+      submitButton.disabled = true;
+      return;
+    }
+
     removeClass(submitButton, "is-info");
     addClass(submitButton, "is-warning");
     addClass(submitButton, "is-loading");
@@ -158,6 +165,7 @@ const formSuccess = () => {
   addClass(submitButton, "is-success");
   submitButton.value = "Success";
   localStorage.setItem("submitted", "true");
+  notification("success", "The form was successfully submitted.");
 };
 
 const formFailure = () => {
@@ -171,6 +179,7 @@ const formFailure = () => {
   }, 3000);
 };
 
-if (localStorage.getItem("submitted") == true) {
+if (localStorage.getItem("submitted") === "true") {
+  notification("info", "A response has previously been submitted. You cannot submit any more responses.");
   submitButton.disabled = true;
 }
