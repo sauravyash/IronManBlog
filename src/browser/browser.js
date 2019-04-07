@@ -182,7 +182,7 @@ const formFailure = () => {
 }
 
 
-if (localStorage.getItem("submitted") === "true") {
+if (localStorage.getItem("submitted") === "true" && location.pathname == "/feedback") {
   notification("info","A response has previously been submitted. You cannot submit any more responses.")
   submitButton.disabled = true
 }
