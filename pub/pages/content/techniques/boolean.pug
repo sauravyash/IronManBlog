@@ -1,0 +1,14 @@
+extends ../../layout
+
+block content
+  .container.is-fluid#updates(style="padding-top: 2rem").content.is-large
+    h1 Boolean Functions
+    section(style="padding:0 1rem 4rem")
+      p.is-size-3 A Boolean function is described by an algebraic expression consisting of binary variables, the constants 0 and 1, and the logic operation symbols. For a given set of values of the binary variables involved, the boolean function can have a value of 0 or 1.
+      
+      p.is-size-3 In context of 3D Modelling, Constructive Solid Geometry is a technique used in solid modeling. It allows an artist to create a complex surface or object by using Boolean operators to combine simpler objects, potentially generating visually complex objects by combining a few primitive ones. It can be compared to box modelling, as this is a different technique used to produce complex polygons.
+      
+      p.is-size-3 I used the Boolean Function "Combine" (the union boolean operator) in order to join the arms to the body, while automatically filling in the gaps that existed between them.
+      
+      p.is-size-3 The issue that this technique created was the formation of complex geometry around the shoulder region due to the complex polygon structure and the high number of polygons. However, This was fixed by a mixture of the merge vertices tool, deleting nonmanifold geometry, and the reduce poly tool.
+    
