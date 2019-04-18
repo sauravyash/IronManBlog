@@ -3,6 +3,29 @@ extends ../../layout
 block content
   .container.is-fluid#updates(style="padding-top: 2rem").content.is-large
     .container
-      h1 UV Mapping
       section(style="padding:0 1rem 4rem")
-        p To Do..
+        h1 UV Mapping
+        p.is-size-4 UV mapping is the 3D modelling process of projecting a 2D image to a 3D model's surface for texture mapping.
+        p.is-size-4 These are the uv maps that were generated from the UV shells using the automatic generator, which uses a mix of the planar, cylindrial and the spherical projection.
+        
+        h4 Head
+        img.image(src="/img/uv_maps/original/iron_man_U1_V1.png")
+        
+        h4 Body
+        img.image(src="/img/uv_maps/original/iron_man_U2_V1.png")
+        
+        h4 Hands
+        .columns.is-multiline
+          .column.is-half
+            img.image(src="/img/uv_maps/original/iron_man_U3_V1.png")
+          .column.is-half
+            img.image(src="/img/uv_maps/original/iron_man_U3_V2.png")
+        h4 Legs
+        .columns.is-multiline
+          .column.is-half
+            img.image(src="/img/uv_maps/original/iron_man_U4_V1.png")
+          .column.is-half
+            img.image(src="/img/uv_maps/original/iron_man_U4_V2.png")
+        h4 Entire UV Map
+        img.image(src="/img/uv_maps/iron_man_uv_full.png")
+        

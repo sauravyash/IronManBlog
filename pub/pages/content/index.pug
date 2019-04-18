@@ -13,10 +13,13 @@ block content
             p.title= post.Journal_Title
             p.subtitle= post.Journal_Tag
             .content=`${post.Journal_Content.substring(0,120)}...`
-  
-    
-    
-    
-    
-    
-    
+
+  .container.sketchfab-embed-wrapper(style="height: 70vh;box-sizing: content-box;padding: 0 0 20rem;")
+    h2.title Live Model (Textures/Colours do not render correctly)
+    iframe(width='100%', style="height:70vh", src='https://sketchfab.com/models/6ecf6286e3984f49b938c7cfa6bb9624/embed?autospin=0.2&autostart=1&preload=1', frameborder='0', allow='autoplay; fullscreen; vr', mozallowfullscreen='true', webkitallowfullscreen='true')
+    p(style='font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;')
+      a(href='https://sketchfab.com/3d-models/iron-man-yash-6ecf6286e3984f49b938c7cfa6bb9624?utm_medium=embed&utm_source=website&utm_campaign=share-popup', target='_blank', style='font-weight: bold; color: #1CAAD9;') Iron Man Yash
+      |     by 
+      a(href='https://sketchfab.com/sauravyash?utm_medium=embed&utm_source=website&utm_campaign=share-popup', target='_blank', style='font-weight: bold; color: #1CAAD9;') sauravyash
+      |     on 
+      a(href='https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup', target='_blank', style='font-weight: bold; color: #1CAAD9;') Sketchfab
