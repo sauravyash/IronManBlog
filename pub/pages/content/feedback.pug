@@ -13,10 +13,10 @@ block content
         input.input(type='text', name='name', placeholder='Your Name', pattern="^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>?:;|=.,]{1,20}$", required)
       // email
       .field
-        input.input(type='text', name='title', placeholder='Message Heading', minlength="7", pattern="^[a-zA-Z ]*$", required)
+        input.input(type='text', name='title', placeholder='Message Heading', minlength="3", required)
       // message
       .field
-        textarea.textarea(name='message', placeholder="What do you think?", minlength="50", required)
+        textarea.textarea(name='message', placeholder="What do you think?", minlength="5", required)
       button.button.is-info.is-pulled-right#feedback-submit-button(type='submit' required) Submit
   hr
   .container(style="padding: 1rem")
@@ -59,8 +59,8 @@ block content
             p
               strong=`${post.Comment_Title}`
               br
-              =`${post.Comment_Author}`
-              small=` - ${post_time}`
+              span=`${post.Comment_Author} - ${post_time}`
+              
               br
               span=post.Comment_Message
         //
