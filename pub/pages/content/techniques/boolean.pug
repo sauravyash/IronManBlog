@@ -8,7 +8,7 @@ block content
       
       p.is-size-4 In context of 3D Modelling, Constructive Solid Geometry is a technique used in solid modeling. It allows an artist to create a complex surface or object by using Boolean operators to combine simpler objects, potentially generating visually complex objects by combining a few primitive ones. It can be compared to box modelling, as this is a different technique used to produce complex polygons.
       
-      p.is-size-4 I used the Boolean Function "Combine" (the union boolean operator) in order to join the arms to the body, while automatically filling in the gaps that existed between them.
+      p.is-size-4 I used the Boolean Function "Combine" (the union boolean operator) in order to join the arms to the body, while automatically filling in the gaps that existed between them, and removing the polygons inside the collision zone.
       
       p.is-size-4 The issue that this technique created was the formation of complex geometry around the shoulder region due to the complex polygon structure and the high number of polygons. However, This was fixed by a mixture of the merge vertices tool, deleting nonmanifold geometry, and the reduce poly tool.
       

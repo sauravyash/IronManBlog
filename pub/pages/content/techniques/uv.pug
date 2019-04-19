@@ -5,8 +5,9 @@ block content
     .container
       section(style="padding:0 1rem 4rem")
         h1 UV Mapping
-        p.is-size-4 UV mapping is the 3D modelling process of projecting a 2D image to a 3D model's surface for texture mapping.
-        p.is-size-4 These are the uv maps that were generated from the UV shells using the automatic generator, which uses a mix of the planar, cylindrial and the spherical projection.
+        p.is-size-4 UV mapping is the 3D modelling process of projecting a 2D image to a 3D model's surface for texture mapping. "U" and "V" are the names of the axes of a plane, since "X", "Y" and "Z" are used for the coordinates in the 3D space.
+        p.is-size-4 The reason I used UV Maps was because it is required for any form of texture, bumg or transparency mapping. This required the creation of UV shells around the mesh. I used UV Sets to seperate the UV maps of the head, body, arm and legs. This helped to avoid an overly complex single UV map that would make adding textures impossible.
+        p.is-size-4 These are the UV maps that were generated from the UV shells using the automatic generator, which uses a mix of the planar, cylindrial and the spherical projection.
         
         h4 Head
         img.image(src="/img/uv_maps/original/iron_man_U1_V1.png")
@@ -28,4 +29,5 @@ block content
             img.image(src="/img/uv_maps/original/iron_man_U4_V2.png")
         h4 Entire UV Map
         img.image(src="/img/uv_maps/iron_man_uv_full.png")
+        p=`Pluralsight 2014, Understanding UVs - Love Them or Hate Them, They're Essential to Know, Viewed On 14 March 2019, <https://www.pluralsight.com/blog/film-games/understanding-uvs-love-them-or-hate-them-theyre-essential-to-know>. `
         

@@ -13,38 +13,33 @@ block content
       tbody
         tr
           td Box Modelling
-          td 
-          td 
-          td 
-        tr
-          td Extrusion Tool
-          td 
-          td 
-          td 
+          td The primitive version of the entire model was originally created using this technique.
+          td I used box modelling due to its simple nature for modelling, allowing the 3D shape of the model to form with a low polygon count as opposed to NURBS.
+          td=`Jonaitis, J. 2004, Box modeling Technique, Viewed On 12 March 2019, <http://www.jjonaitis.com/tuto/tuto2.htm>. `
         tr
           td Bridging Tool
-          td 
-          td 
-          td 
+          td Around joints of the body/torso of the model.
+          td I used it while fixing the corrupt faces that arose from the (somewhat unreliable) boolean technique
+          td=`Griggs, M. 2018, Master the Bridge tool, Viewed On 10 March 2019, <https://www.creativebloq.com/how-to/master-the-bridge-tool>.`
         tr
           td Boolean Functions
-          td 
-          td 
-          td 
+          td I used the Boolean Function "Combine" (the union boolean operator) in order to join the arms to the body, while automatically filling in the gaps that existed between them, and removing the polygons inside the collision zone.
+          td It is the quickest method of joining 2 polygons that are overlapping, and takes care of colliding faces and holes in the final polygon.
+          td=`Autodesk Inc. 2018, Booleans, Viewed On 20 March 2019, <https://knowledge.autodesk.com/support/maya/getting-started/caas/CloudHelp/cloudhelp/2018/ENU/Maya-Modeling/files/GUID-9467513F-47C3-4C73-8251-6FF8C0DE4982-htm.html>.`
         tr
-          td Subdivision Surface (Polygons)
-          td 
-          td 
-          td 
+          td Subdivision Surface (For Polygons)
+          td I used this technique for the arms and hands on the Iron Man Model
+          td This allowed for the realistic look for the hands.
+          td=`Autodesk 2018, Subdiv to Polygons Options, Viewed On 10 March 2019, <https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2018/ENU/Maya-Basics/files/GUID-31FAF0FF-6EE1-4360-A65A-FFED15C12BBD-htm.html>.` 
         tr
           td UV Mapping
-          td 
-          td 
-          td 
+          td The entire model was UV Mapped
+          td It is required for any form of texture, bumg or transparency mapping
+          td=`Pluralsight 2014, Understanding UVs - Love Them or Hate Them, They're Essential to Know, Viewed On 14 March 2019, <https://www.pluralsight.com/blog/film-games/understanding-uvs-love-them-or-hate-them-theyre-essential-to-know>. `
         tr
           td Texture Mapping
           td 
           td 
-          td 
+          td=`Hodgins, J. 2001, Texture and other Mappings, Viewed On 18 March 2019, <http://www.cs.cmu.edu/~djames/15-462/Fall03/notes/09-texture.pdf>.`
           
             
